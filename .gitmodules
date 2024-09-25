@@ -1,0 +1,15 @@
+[submodule "xchange"]
+	path = xchange
+	url = git@github.com:Smithsonian/xchange
+[submodule "redisx"]
+	path = redisx
+	url = git@github.com:Smithsonian/redisx
+[submodule "smax-clib"]
+	path = smax-clib
+	url = git@github.com:Smithsonian/smax-clib
+[submodule "smax-server"]
+	path = smax-server
+	url = git@github.com:Smithsonian/smax-server
+[submodule "smax-postgres"]
+	path = smax-postgres
+	url = git@github.com:Smithsonian/smax-postgres
