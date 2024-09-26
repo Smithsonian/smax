@@ -43,7 +43,7 @@ services:
 
 .PHONY: dox
 dox:
-	make -C xchange local-dox
+	make -C xchange dox
 	make -C redisx local-dox
 	make -C smax-clib local-dox
 	make -C smax-postgres local-dox
