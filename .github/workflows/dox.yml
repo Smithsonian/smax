@@ -1,0 +1,44 @@
+name: API documentation
+
+on:
+  release:
+    types: [published]
+
+  push:
+    branches:
+      - main
+    paths:
+      - 'xchange/**'
+      - 'redisx/**'
+      - 'smax-clib/**'
+      - 'smax-postgres/**'
+      - 'Makefile'
+      - '.github/workflows/dox.yml'
+
+  pull_request:
+    paths:
+      - 'xchange/**'
+      - 'redisx/**'
+      - 'smax-clib/**'
+      - 'smax-postgres/**'
+      - 'Makefile'
+      - '.github/workflows/dox.yml'
+
+
+jobs:
+
+  apidocs:
+    name: Generate API documentation
+
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: install doxygen
+      run: sudo apt-get install doxygen
+
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Generate docs
+      run: make dox
+
