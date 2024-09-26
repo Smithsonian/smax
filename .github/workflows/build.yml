@@ -39,6 +39,8 @@ jobs:
     
     - name: Check out repository
       uses: actions/checkout@v4
+      with:
+        submodules: true
       
     - name: Build static libraries
       run: make static
