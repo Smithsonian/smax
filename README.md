@@ -15,11 +15,11 @@
 # SMA-X
 
 [SMA-X](https://docs.google.com/document/d/1eYbWDClKkV7JnJxv4MxuNBNV47dFXuUWu7C4Ve_YTf0/edit?usp=sharing) is a realtime 
-structured database for information sharing on distributed systtems.
+structured database for information sharing on distributed systems.
 
 This is a meta repository, offering a collection of SMA-X related repositories in one place as git submodules. As such
 it helps ensure that all components are in a well-defined and compatible state, and it simplifies the build by having
-dependnecies in one place.
+dependencies in one place.
 
 Author: Attila Kovacs
 
@@ -55,7 +55,7 @@ build variables can be configured:
    
  - `CC`: The C compiler to use (default: `gcc`).
 
- - `CPPFLAGS`: C pre-processor flags, such as externally defined compiler constants.
+ - `CPPFLAGS`: C preprocessor flags, such as externally defined compiler constants.
  
  - `CFLAGS`: Flags to pass onto the C compiler (default: `-Os -Wall -std=c99`). Note, `-Iinclude` will be added 
    automatically.
