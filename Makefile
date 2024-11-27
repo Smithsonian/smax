@@ -69,6 +69,13 @@ distclean:
 	make -C smax-clib distclean
 	make -C smax-postgres distclean
 
+.PHONY: install
+distclean:
+	make -C xchange install
+	make -C redisx install
+	make -C smax-clib install
+	make -C smax-postgres install
+
 # Built-in help screen for `make help`
 .PHONY: help
 help:
@@ -85,6 +92,7 @@ help:
 	@echo "  dox           Compiles local HTML API documentation using 'doxygen'."
 	@echo "  check         Performs static analysis."
 	@echo "  all           All of the above."
+	@echo "  install       Install components (e.g. 'make DESTDIR=<path> install')"
 	@echo "  clean         Removes intermediate products."
 	@echo "  distclean     Deletes all generated files."
 	@echo
