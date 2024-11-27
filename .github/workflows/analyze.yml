@@ -4,8 +4,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/analyze.yml'
 
   pull_request:
+    paths:
+      - '.github/workflows/analyze.yml'
 
 jobs:
 
@@ -24,4 +28,4 @@ jobs:
       run: sudo apt-get install -y cppcheck
     
     - name: Run cppcheck
-      run: make check
+      run: make analyze

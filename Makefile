@@ -48,12 +48,12 @@ dox:
 	make -C smax-clib local-dox
 	make -C smax-postgres local-dox
 
-.PHONY: check
+.PHONY: analyze
 check:
-	make -C xchange check
-	make -C redisx check
-	make -C smax-clib check
-	make -C smax-postgres check
+	make -C xchange analyze
+	make -C redisx analyze
+	make -C smax-clib analyze
+	make -C smax-postgres analyze
 
 .PHONY: clean
 clean:
