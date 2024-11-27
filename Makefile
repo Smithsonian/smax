@@ -18,7 +18,7 @@ export XCHANGE REDISX SMAXLIB BIN LIB
 deploy: shared tools
 
 .PHONY: all
-all: shared static tools services local-dox
+all: shared static tools services dox
 
 .PHONY: shared
 shared:
@@ -55,6 +55,20 @@ check:
 	make -C smax-clib analyze
 	make -C smax-postgres analyze
 
+.PHONY: test
+test:
+	make -C xchange test
+	make -C redisx test
+	make -C smax-clib test
+	make -C smax-postgres test
+	
+.PHONY: check
+check:
+	make -C xchange check
+	make -C redisx check
+	make -C smax-clib check
+	make -C smax-postgres check
+
 .PHONY: clean
 clean:
 	make -C xchange clean
@@ -75,6 +89,19 @@ distclean:
 	make -C redisx install
 	make -C smax-clib install
 	make -C smax-postgres install
+	
+# Some standard GNU targets, that should always exist...
+.PHONY: html
+html: dox
+
+.PHONY: dvi
+dvi:
+
+.PHONY: ps
+ps:
+
+.PHONY: pdf
+pdf:
 
 # Built-in help screen for `make help`
 .PHONY: help
@@ -90,8 +117,8 @@ help:
 	@echo "  shared        shared (.so[.1]) libraries."
 	@echo "  static        static (.a) libraries."
 	@echo "  dox           Compiles local HTML API documentation using 'doxygen'."
-	@echo "  check         Performs static analysis."
 	@echo "  all           All of the above."
+	@echo "  analyze       Performs static analysis."
 	@echo "  install       Install components (e.g. 'make DESTDIR=<path> install')"
 	@echo "  clean         Removes intermediate products."
 	@echo "  distclean     Deletes all generated files."
