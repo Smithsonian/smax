@@ -49,11 +49,18 @@ dox:
 	make -C smax-postgres local-dox
 
 .PHONY: analyze
-check:
+analyze:
 	make -C xchange analyze
 	make -C redisx analyze
 	make -C smax-clib analyze
 	make -C smax-postgres analyze
+
+.PHONY: infer
+infer:
+	make -C xchange infer
+	make -C redisx infer
+	make -C smax-clib infer
+	make -C smax-postgres infer
 
 .PHONY: test
 test:
