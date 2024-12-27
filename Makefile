@@ -91,7 +91,7 @@ distclean:
 	make -C smax-postgres distclean
 
 .PHONY: install
-distclean:
+install:
 	make -C xchange install
 	make -C redisx install
 	make -C smax-clib install
