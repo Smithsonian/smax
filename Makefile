@@ -15,7 +15,7 @@ LIB ?= $(PWD)/lib
 export XCHANGE REDISX SMAXLIB BIN LIB
 
 .PHONY: deploy
-deploy: shared tools
+deploy: tools services
 
 .PHONY: all
 all: shared static tools services dox
@@ -27,7 +27,6 @@ shared:
 	make -C smax-clib shared
 
 .PHONY: static
-static: LDFLAGS += -static
 static:
 	make -C xchange static
 	make -C redisx static
@@ -35,6 +34,7 @@ static:
 
 .PHONY: tools
 tools:
+	make -C redisx tools
 	make -C smax-clib tools
 	
 .PHONY: services
