@@ -1,4 +1,6 @@
 name: Build
+permissions:
+  contents: read
 
 on: 
   push:
@@ -16,27 +18,26 @@ jobs:
     steps:
     - name: update packages
       run: sudo apt-get update
-    
+
     - name: install PostgreSQL
       run: sudo apt-get install libpq-dev
-    
+
     - name: install dependencies
       run: sudo apt-get install libsystemd-dev libpopt-dev libreadline-dev libbsd-dev libssl-dev 
-    
+
     - name: Check out repository
       uses: actions/checkout@v4
       with:
         submodules: true
-      
+
     - name: Build static libraries
       run: make static
-    
+
     - name: Build shared libraries
       run: make shared
-      
+
     - name: Build tools
       run: make tools
-      
+
     - name: Build services
-      run: make services
-      
+      run: make services      

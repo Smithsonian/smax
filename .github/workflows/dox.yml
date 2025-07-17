@@ -1,4 +1,6 @@
 name: API documentation
+permissions:
+  contents: read
 
 on:
   release:
@@ -28,4 +30,3 @@ jobs:
 
     - name: Generate docs
       run: make dox
-
